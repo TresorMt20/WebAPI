@@ -7,7 +7,11 @@ namespace DataLAYER
 {
     public class ClothDao : IClothDao
     {
-        static Db db = Db.GetInstance();
+        // static Db db = Db.GetInstance();
+
+        Db db ;
+
+        public ClothDao() { db = new Db(); }
         public void AddCloths(Cloth cloth)
         {
             db.InsertCloth(cloth);

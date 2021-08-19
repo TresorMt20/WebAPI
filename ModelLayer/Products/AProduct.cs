@@ -21,7 +21,7 @@ namespace ModelLayer
             }
             set
             {
-                this.name = Name;
+                this.name = value;
             }
         }
         public int Price
@@ -32,7 +32,7 @@ namespace ModelLayer
             }
             set
             {
-                this.price = Price;
+                this.price = value;
             }
         }
         public string Description
@@ -43,7 +43,7 @@ namespace ModelLayer
             }
             set
             {
-                this.description = Description;
+                this.description = value;
             }
         }
         public string Id
@@ -61,7 +61,7 @@ namespace ModelLayer
             }
             set
             {
-                this.imagigeurl = Image;
+                this.imagigeurl = value;
             }
 
         }

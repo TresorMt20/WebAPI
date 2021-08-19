@@ -6,6 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using DataLAYER;
 using System.Data.SqlClient;
+using ModelLayer;
+using ServiceLayer;
 
 namespace WebAPI.Controllers
 {
@@ -14,11 +16,26 @@ namespace WebAPI.Controllers
     public class TrialController : ControllerBase
     {
         [HttpGet]
-        public IEnumerable<string> GET()
+        public IEnumerable<Cloth> GET()
         {
-           
 
-            return new string[] { per.age, per.email, per.name };
+            //Cloth cl = new Cloth();
+            Service serv = new Service();
+
+            //serv.AddCloths(cl);
+
+            return serv.Getcloths();
+            //return new Cloth[] { serv.Getcloths(); };
+        }
+        [HttpPost]
+        public void Save(Cloth cloth)
+        {
+
+            
+            Service serv = new Service();
+
+            serv.AddCloths(cloth);
+
         }
     }
 }
